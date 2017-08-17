@@ -1,0 +1,1 @@
+mongod --dbpath "C:\Users\raghu\Documents\development\freelancing\shared_images\db"
