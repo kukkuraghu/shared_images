@@ -5,11 +5,14 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+//connect with the db
 require('./lib/connections'); 
 
+//setup the routes
 var users = require('./routes/users');
 var photos = require('./routes/photos');
 
+//load express
 var app = express();
 
 
@@ -19,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//app.use('/', index);
+//register the routes with express
 app.use('/users', users);
 app.use('/photos', photos);
 
